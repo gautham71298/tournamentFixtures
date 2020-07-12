@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>VISWANATH | Bracket</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="../img/icon.png">
+  <!-- font -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- normalize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css.map">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- jspdf for pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.2/jspdf.plugin.autotable.js"></script>
+  <script src="htmlToPDF.min.js"></script>
+
+  <!-- custom style sheet -->
+  <link rel="stylesheet" href="fixtures_styles.css">
+  <link rel="stylesheet" href="../400/400m.css">
+  <!-- MATE -->
+
+</head>
+
+<body>
+
+  <!-- Form Begins -->
+
+  <div class="container" id="input">
+    <div class="formBox">
+      <form class="rounded" onsubmit="event.preventDefault(); generate();">
+        <div class="row">
+          <div class="col-sm-9 col-xs-9 measure text-center">
+            <h2>Match Scheduler</h2>
+            <h3>KnockOut Match</h3>
+          </div>
+        </div>
+
+        <div class="row teamSizeInputContainer">
+          <div class="col-sm-12">
+            <div class="inputBox">
+              <input type="text" id="noOfTeams" class="input" placeholder="Enter the number of Teams(N)"
+                onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the number of Teams(N)'">
+              <label class="label-helper" for="input">Number of Teams(N) :</label>
+            </div>
+            <div class="inputBox row">
+              <div class="col-sm-6">
+                <input type="text" id="instName" class="input" placeholder="Enter the name of the Institute"
+                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter the name of the Institute'">
+                <label class="label-helper" for="input">Institute Name :</label>
+              </div>
+              <div class="col-sm-6">
+                <input type="file" id="instLogo" accept="image/*" class="input"
+                  style="border: 0; font-size: 1.2em; padding: 1.2em 0 0 4em;" name="logo">
+                <label class="label-helper" for="instLogo">Institute logo</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row submitContainer">
+          <div class="col-sm-12 ">
+            <div class="exp-btn">
+              <a id="calculate" href="javascript:nextTeamName();" class="button"><span>Submit</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div id="teamNameAndMatchdate">
+          <div class="row" id="formField" style="margin-top: 40px;"></div>
+          <div class="row" id="totalNoOfMatch"></div>
+          <div class="row" id="matchSchedule"></div>
+        </div>
+        <div class="row text-center" style="margin-top: 4em;">
+          <div class="col-sm-6">
+            <a type="button" id="generateBtn" value="Generate" class="button2"
+              onclick="generate(); uploadImg();"><span>Generate</span></a>
+          </div>
+          <div class="col-sm-6" id="generatePDFBtn">
+            <a type="button" id="saveBtn" value="Save" class="button2" onclick="generatePDF()"><span>Save as PDF</span></a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container2" id="tournamentContainer">
+    <div id="tournamentHeader"></div>
+    <div id="tournamentBracket"></div>
+  </div>
+  <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+  <!-- Form Ends -->
+
+
+  
+  <div class="container-fluid col-md-12 footer-bottom">
+    <div class="col-md-4 col-sm-12" style="text-align: center;"><span>
+        Copyright <i class="fa fa-copyright" aria-hidden="true"></i> Dr.S.Viswanath. All right reserved.</span>
+    </div>
+    <div class="col-md-4 col-sm-12" style="text-align: right;"> <span>Developed by <a
+          href="https://www.linkedin.com/in/gautham-k"> Gautham Kumaran</a> </span>
+    </div>
+  </div>
+  <!-- Footer ends -->
+</body>
+<script src="brackets.min.js"></script>
+<script src="fixtures_script.js"></script>
+
+</html>
